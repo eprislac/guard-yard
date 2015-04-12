@@ -1,0 +1,5 @@
+guard :yard, cmd: 'bundle exec yard doc' do
+  watch(%r{ /app\/.+\.rb/ })
+  watch(%r{ /lib\/.+\.rb/ })
+  watch(%r{ /ext\/.+\.c/ })
+end
