@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency "guard", "~> 2.1"
   s.add_development_dependency "guard-compat", "~> 1.1"
   s.add_development_dependency "yard", "~> 0.8"
-  s.add_development_dependency "bundler", "~> 1.9"
+  s.add_development_dependency "bundler", "~> 1.7.6"
   s.add_development_dependency "rake", "~> 10.1"
   s.add_development_dependency "launchy", "~> 2.4"
 end
