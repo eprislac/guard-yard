@@ -1,5 +1,5 @@
 module Guard
-  module Yard
+  class Yard < Plugin
     # [Guard::Yard::Options] options to pass to the guard
     class Options
       DEFAULTS = {

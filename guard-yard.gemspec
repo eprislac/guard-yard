@@ -2,10 +2,9 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'guard/yard/version'
-
 Gem::Specification.new do |s|
   s.name          = "guard-yard"
-  s.version       = Guard::Yard::VERSION
+  s.version       = Guard::YardVersion::VERSION
   s.authors       = ["Eddie Prislac"]
   s.email         = ["prislac@informz.com"]
 
@@ -24,13 +23,10 @@ Gem::Specification.new do |s|
     s.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   end
 
-  s.add_development_dependency "bundler", "~> 1.9"
-  s.add_development_dependency "rake", "~> 10.0"
   s.add_dependency "guard", "~> 2.1"
   s.add_development_dependency "guard-compat", "~> 1.1"
   s.add_development_dependency "yard", "~> 0.8"
-  s.add_development_dependency "rspec"
-  s.add_development_dependency "rubocop"
+  s.add_development_dependency "bundler", "~> 1.9"
+  s.add_development_dependency "rake", "~> 10.1"
   s.add_development_dependency "launchy", "~> 2.4"
-  s.add_development_dependency "pry-nav"
 end

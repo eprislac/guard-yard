@@ -2,7 +2,7 @@ require 'guard/yard'
 require 'pry-nav'
 
 module Guard
-  module Yard
+  class Yard < Plugin
     # [Guard::Yard::YardCommand] Generates command string
     class YardCommand < String
       COMMAND_EXCEPTION = 'Invalid Command Exception'
@@ -42,7 +42,7 @@ module Guard
       # @return [StringArray]
       def _parts(options)
         parts = %w(rm -rf .yardoc)
-        parts << '&&'
+        parts << '&& bundle exec'
         if options[:cmd] == 'yard'
           parts << options[:cmd]
           parts << options[:path]
@@ -54,8 +54,8 @@ module Guard
       end
 
       def additional_options(parts, options={})
-        (parts << "&& yard gems") if options[:gems]
-        (parts << "&& yard graph") if options[:graph]
+        (parts << "&& bundle exec yard gems") if options[:gems]
+        (parts << "&& bundle exec yard graph") if options[:graph]
         parts
       end
 

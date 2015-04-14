@@ -2,23 +2,23 @@ require 'socket'
 require 'guard/yard'
 
 module Guard
-  module Yard
+  class Yard < Plugin
     # [Guard::Yard::Server] runs server
     class Server
-      attr_accessor :pid, :port
+      attr_accessor :pid, :port, :options
       SERVER_START_ERROR = '[Guard::Yard] Error starting documentation server.'
       SERVER_START_MSG = '[Guard::Yard] Starting YARD Documentation Server.'
       SERVER_STOP_MSG = '[Guard::Yard] Stopping YARD Documentation Server.'
       SERVER_START_SUCCESS = '[Guard::Yard] Server successfully started.'
       SERVER_START_FAIL = '[Guard::Yard] Server NOT started.'
+
       def initialize(options = {})
-        @opts = Options.with_defaults(options)
+        @options = options
       end
 
       def spawn
         UI.info(SERVER_START_MSG)
-
-        command = YardCommand.new(options)
+        command = YardCommand.new(@options)
         pid Process.spawn(command)
       end
 
@@ -54,7 +54,7 @@ module Guard
       end
 
       def notify_fail
-        Notifier.notify(SERVER_START_FAIL,
+        UI.notify(SERVER_START_FAIL,
                         title: 'yard',
                         image: :failed)
         false
