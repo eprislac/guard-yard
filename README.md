@@ -1,6 +1,8 @@
 [![GitHub version](https://badge.fury.io/gh/eprislac%2Fguard-yard.svg)](http://badge.fury.io/gh/eprislac%2Fguard-yard)
 [![Build Status](https://travis-ci.org/eprislac/guard-yard.svg?branch=master)](https://travis-ci.org/eprislac/guard-yard)
 [![Coverage Status](https://coveralls.io/repos/eprislac/guard-yard/badge.svg?branch=master)](https://coveralls.io/r/eprislac/guard-yard?branch=master)
+[![Dependency Status](https://gemnasium.com/eprislac/guard-yard.svg)](https://gemnasium.com/eprislac/guard-yard)
+
 [![Code Climate](https://codeclimate.com/github/eprislac/guard-yard/badges/gpa.svg)](https://codeclimate.com/github/eprislac/guard-yard)
 [![Inline docs](http://inch-ci.org/github/eprislac/guard-yard.svg?branch=master)](http://inch-ci.org/github/eprislac/guard-yard)
 [![GratiPay](http://img.shields.io/gratipay/semperfried76.svg)](https://gratipay.com/semperfried76)
