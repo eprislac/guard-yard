@@ -1,0 +1,14 @@
+/Users/eddie/.rvm/rubies/ruby-1.9.3-p551-mri/bin/ruby -r ./siteconf20150414-63318-46iq15.rb extconf.rb 
+checking for main() in -lstdc++... yes
+checking for ruby/encoding.h... yes
+creating Makefile
+
+make  clean
+
+make
+compiling unf.cc
+linking shared-object unf_ext.bundle
+
+make  install
+/usr/bin/install -c -m 0755 unf_ext.bundle .gem.20150414-63318-1ry1iaf
+installing default unf_ext libraries

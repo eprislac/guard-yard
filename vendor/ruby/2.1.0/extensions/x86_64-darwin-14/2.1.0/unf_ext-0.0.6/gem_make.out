@@ -1,0 +1,14 @@
+/Users/eddie/.rvm/rubies/ruby-2.1.0/bin/ruby -r ./siteconf20150414-57157-hvmlcm.rb extconf.rb 
+checking for main() in -lstdc++... yes
+checking for ruby/encoding.h... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling unf.cc
+linking shared-object unf_ext.bundle
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20150414-57157-pn7v15
+installing default unf_ext libraries
