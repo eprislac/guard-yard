@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+require './spec/spec_helper'
 require 'guard/yard/version'
 describe Guard::YardVersion do
   it 'has a version number' do
