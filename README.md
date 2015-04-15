@@ -1,3 +1,4 @@
+[![GitHub version](https://badge.fury.io/gh/eprislac%2Fguard-yard.svg)](http://badge.fury.io/gh/eprislac%2Fguard-yard)
 [![Build Status](https://travis-ci.org/eprislac/guard-yard.svg?branch=master)](https://travis-ci.org/eprislac/guard-yard)
 [![Coverage Status](https://coveralls.io/repos/eprislac/guard-yard/badge.svg)](https://coveralls.io/r/eprislac/guard-yard)
 [![Code Climate](https://codeclimate.com/github/eprislac/guard-yard/badges/gpa.svg)](https://codeclimate.com/github/eprislac/guard-yard)
