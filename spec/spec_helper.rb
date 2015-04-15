@@ -6,3 +6,5 @@ require 'guard/yard'
 require 'guard/compat/plugin'
 require 'guard/compat/test/helper'
 
+require 'coveralls'
+Coveralls.wear!

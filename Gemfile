@@ -17,6 +17,7 @@ group :development, :test do
   gem "guard-compat", ">= 0.0.2", require: false
   gem "rubocop", require: false
   gem "guard-rubocop", require: false
+  gem 'coveralls', require: false
 end
 
 group :tool do

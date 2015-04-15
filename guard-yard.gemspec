@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'guard/yard/version'
 Gem::Specification.new do |s|
   s.name          = "guard-yard"
-  s.version       = Guard::YardVersion::VERSION
+  s.version       = '0.0.1.pre' #Guard::YardVersion::VERSION
   s.authors       = ["Eddie Prislac"]
   s.email         = ["prislac@informz.com"]
 
