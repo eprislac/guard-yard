@@ -12,17 +12,20 @@ Tested in Ruby versions mri-1.9.3, jruby-1.7.19(19mode), 2.1.0, ruby-head and jr
 ---
 
 
-Provides templates and methods for running a yard documentation server that auto-regenerates its contents when changes to your code are saved.
-This gem is not a fork of [[panthomakos/guard-yard]], but credit where it is due, a good deal of his code did make it in here, although not always where he originally had it. The direct inspiration for this gem comes from my utter failure to get it working on the versions of jruby and rails that we run at work.
+Provides templates and methods for running a yard documentation server that auto-generates its contents when changes to your code are saved.
+This gem is not a fork of [[panthomakos/guard-yard]], but credit where it is due,
+a good deal of his code did make it in here, although not always where he originally had it.
+The direct inspiration for this gem comes from my inability to use panthomakos gem  
+on the versions of jruby and rails that we run at work (which are not supported).
 I looked at gems we were using at work, and decided to modify the structure
 of the code to better match the guard gems we were using which did work,
 in particular, [[guard/guard-rspec]]. I also began testing the hell out
 of the code, running it through rspec and rubocop, and running Continuous Integration,
 Documentation Checking, Dependency Checking, Code Coverage, and Code Quality analysis.
 
-My goal with this project is a complete professional-quality refactor of the
+My goal with this project is a complete, professional-quality refactor of the
 gem that works, out of the box, with multiple versions of ruby, rails, sinatra, guard,
-and yard.
+and yard, and well documented.
 
 Even though the analysis looks good so far, be advised that
 this gem is in alpha right now, is only scant days old, and
