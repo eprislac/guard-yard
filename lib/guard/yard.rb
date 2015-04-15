@@ -63,9 +63,8 @@ module Guard
     # @return [Object] the task result
     #
     def run_on_additions(paths)
-      Guard::Compat::UI.info "[Guard::Yard] Detected changes in #{paths.join(',')}."
-      paths.each { |path| document([path]) }
-      Guard::Compat::UI.info "[Guard::Yard] Updated documentation for #{paths.join(',')}."
+      return false if paths.empty?
+      _throw_if_failed { run_for_paths(paths) }
     end
 
     # Called on file(s) modifications that the Guard plugin watches.
