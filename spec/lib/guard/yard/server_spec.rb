@@ -1,3 +1,4 @@
+require './spec/spec_helper'
 require 'guard'
 require 'guard/yard/server'
 require 'guard/yard/options'
