@@ -1,12 +1,18 @@
+# Guard::Yard
+---
+Tested in Ruby versions mri-1.9.3, jruby-1.7.19(19mode), 2.1.0, ruby-head and jruby-head
+
 [![GitHub version](https://badge.fury.io/gh/eprislac%2Fguard-yard.svg)](http://badge.fury.io/gh/eprislac%2Fguard-yard)
 [![Build Status](https://travis-ci.org/eprislac/guard-yard.svg?branch=master)](https://travis-ci.org/eprislac/guard-yard)
 [![Coverage Status](https://coveralls.io/repos/eprislac/guard-yard/badge.svg?branch=master)](https://coveralls.io/r/eprislac/guard-yard?branch=master)
 [![Dependency Status](https://gemnasium.com/eprislac/guard-yard.svg)](https://gemnasium.com/eprislac/guard-yard)
-
 [![Code Climate](https://codeclimate.com/github/eprislac/guard-yard/badges/gpa.svg)](https://codeclimate.com/github/eprislac/guard-yard)
 [![Inline docs](http://inch-ci.org/github/eprislac/guard-yard.svg?branch=master)](http://inch-ci.org/github/eprislac/guard-yard)
 [![GratiPay](http://img.shields.io/gratipay/semperfried76.svg)](https://gratipay.com/semperfried76)
-# Guard::Yard
+
+---
+
+
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/guard/yard`. To experiment with that code, run `bin/console` for an interactive prompt.
 
