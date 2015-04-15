@@ -1,3 +1,4 @@
+require 'guard'
 require 'guard/yard/server'
 require 'guard/yard/options'
 

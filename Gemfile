@@ -10,12 +10,12 @@ group :test do
 end
 
 group :development do
-  gem "guard-compat", ">= 0.0.2", require: false
   gem 'pry-nav'
 end
 
 group :development, :test do
-  gem "rubocop", "0.25.0", require: false
+  gem "guard-compat", ">= 0.0.2", require: false
+  gem "rubocop", require: false
   gem "guard-rubocop", require: false
 end
 

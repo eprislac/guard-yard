@@ -1,4 +1,5 @@
-require 'spec_helper'
+require 'spec/spec_helper'
+require 'guard'
 require 'guard/yard/yard_command'
 require 'pry-nav'
 

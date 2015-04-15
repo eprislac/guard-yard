@@ -1,3 +1,5 @@
+require 'guard'
+require 'guard/compat/plugin'
 module Guard
   class Yard < Plugin
     # [Guard::Yard::Options] options to pass to the guard

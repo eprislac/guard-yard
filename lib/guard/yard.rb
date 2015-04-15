@@ -1,4 +1,5 @@
-require 'guard/compat/plugin'
+#require 'guard/compat/plugin'
+require 'guard'
 require 'guard/yard/version'
 require 'guard/yard/options'
 

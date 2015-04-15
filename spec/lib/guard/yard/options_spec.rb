@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'spec/spec_helper'
 require 'guard/yard/yard_command'
 require 'guard/yard/options'
 

@@ -1,3 +1,4 @@
+require 'guard'
 require 'guard/yard'
 require 'pry-nav'
 

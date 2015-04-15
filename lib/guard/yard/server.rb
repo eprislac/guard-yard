@@ -1,4 +1,5 @@
 require 'socket'
+require 'guard'
 require 'guard/yard'
 
 module Guard
