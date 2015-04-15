@@ -1,5 +1,5 @@
 language: ruby
-bundler_args: --withoout tool
+bundler_args: --without tool
 rvm:
   - 1.9.3
   - jruby-19mode
