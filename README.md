@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.org/eprislac/guard-yard.svg?branch=master)](https://travis-ci.org/eprislac/guard-yard)
 [![Coverage Status](https://coveralls.io/repos/eprislac/guard-yard/badge.svg)](https://coveralls.io/r/eprislac/guard-yard)
 [![Code Climate](https://codeclimate.com/github/eprislac/guard-yard/badges/gpa.svg)](https://codeclimate.com/github/eprislac/guard-yard)
+[![GratiPay](https://img.shields.io/gratipay/semperfried76.svg)](https://gratipay.com/semperfried76)
 # Guard::Yard
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/guard/yard`. To experiment with that code, run `bin/console` for an interactive prompt.
