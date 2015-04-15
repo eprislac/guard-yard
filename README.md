@@ -1,5 +1,4 @@
 # Guard::Yard
----
 Tested in Ruby versions mri-1.9.3, jruby-1.7.19(19mode), 2.1.0, ruby-head and jruby-head
 
 [![GitHub version](https://badge.fury.io/gh/eprislac%2Fguard-yard.svg)](http://badge.fury.io/gh/eprislac%2Fguard-yard)
@@ -13,17 +12,30 @@ Tested in Ruby versions mri-1.9.3, jruby-1.7.19(19mode), 2.1.0, ruby-head and jr
 ---
 
 
+Provides templates and methods for running a yard documentation server that auto-regenerates its contents when changes to your code are saved.
+This gem is not a fork of [[panthomakos/guard-yard]], but credit where it is due, a good deal of his code did make it in here, although not always where he originally had it. The direct inspiration for this gem comes from my utter failure to get it working on the versions of jruby and rails that we run at work.
+I looked at gems we were using at work, and decided to modify the structure
+of the code to better match the guard gems we were using which did work,
+in particular, [[guard/guard-rspec]]. I also began testing the hell out
+of the code, running it through rspec and rubocop, and running Continuous Integration,
+Documentation Checking, Dependency Checking, Code Coverage, and Code Quality analysis.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/guard/yard`. To experiment with that code, run `bin/console` for an interactive prompt.
+My goal with this project is a complete professional-quality refactor of the
+gem that works, out of the box, with multiple versions of ruby, rails, sinatra, guard,
+and yard.
 
-TODO: Delete this and the text above, and describe your gem
+Even though the analysis looks good so far, be advised that
+this gem is in alpha right now, is only scant days old, and
+has not yet been tested for anything other than Ruby compatibility.
+
+**Install at your own risk.**
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'guard-yard'
+gem 'guard-yard', git:'git@github.com:eprislac/guard-yard.git'
 ```
 
 And then execute:
@@ -46,7 +58,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/guard-yard/fork )
+1. Fork it ( https://github.com/eprislac/guard-yard/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
