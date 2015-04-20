@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = "2012-10-17"
   s.description = "retrieve the sourcecode for a method"
   s.email = "jrmair@gmail.com"
-  s.files = [".gemtest", ".travis.yml", ".yardopts", "Gemfile", "LICENSE", "README.markdown", "Rakefile", "lib/method_source.rb", "lib/method_source/code_helpers.rb", "lib/method_source/source_location.rb", "lib/method_source/version.rb", "method_source.gemspec", "test/test.rb", "test/test_code_helpers.rb", "test/test_helper.rb"]
+  s.files = [".gemtest", ".travis.yml", ".yardopts", "Gemfile", "LICENSE", "README.markdown", "Rakefile", "lib/method_source.rb", "lib/method_source/code_helpers.rb", "lib/method_source/source_location.rb", "lib/method_source/yard_version.rb", "method_source.gemspec", "test/test.rb", "test/test_code_helpers.rb", "test/test_helper.rb"]
   s.homepage = "http://banisterfiend.wordpress.com"
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.23"

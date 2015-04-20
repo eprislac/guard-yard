@@ -30,7 +30,8 @@ describe Guard::Yard::YardCommand do
     context 'it should return an error if' do
       context 'if passed a bad value for :cmd, it' do
         it 'outputs the error to $stdout' do
-          expect { Guard::Yard::YardCommand.new({cmd: 'bad'}) }.to output.to_stdout
+          expect { Guard::Yard::YardCommand.new({cmd: 'bad'})
+                 }.to output.to_stdout
         end
       end
     end

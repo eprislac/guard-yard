@@ -59,10 +59,6 @@ module Guard
         (parts << "&& bundle exec yard graph") if options[:graph]
         parts
       end
-
-
-
-
     end
     # Class for ArgumentError
     # @return [SignalException]

@@ -1,5 +1,5 @@
 require './spec/spec_helper'
-require 'guard/yard/version'
+require 'guard/yard_version'
 describe Guard::YardVersion do
   it 'has a version number' do
     expect(Guard::YardVersion::VERSION).not_to be nil
@@ -14,8 +14,8 @@ describe Guard::Yard do
     allow(Guard::Compat::UI).to receive(:info)
   end
 
-  describe ".initialize" do
-    it "instantiates with default and custom options" do
+  describe '.initialize' do
+    it 'instantiates with default and custom options' do
       guard_yard = Guard::Yard.new({foo: 'bar'})
       expect(guard_yard.options).to eq(default_options.merge(foo: 'bar'))
     end

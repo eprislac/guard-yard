@@ -8,11 +8,11 @@ module Guard
       end
 
       def notify(summary)
-        UI.notify(summary)
+        Compat::UI.notify(summary)
       end
 
       def notify_failure
-        UI.notify("Failed")
+        Compat::UI.notify('Failed')
       end
     end
   end

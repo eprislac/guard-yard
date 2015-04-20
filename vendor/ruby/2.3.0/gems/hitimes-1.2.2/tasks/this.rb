@@ -38,7 +38,7 @@ class ThisProject
   #
   # Returns a String version
   def version
-    [ "lib/#{ name }.rb", "lib/#{ name }/version.rb" ].each do |v|
+    [ "lib/#{ name }.rb", "lib/#{ name }/yard_version.rb" ].each do |v|
       path = project_path( v )
       line = path.read[/^\s*VERSION\s*=\s*.*/]
       if line then

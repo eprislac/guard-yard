@@ -22,7 +22,7 @@ Metrics/LineLength:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/AlignParameters:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 7
 # Cop supports --auto-correct.
@@ -37,24 +37,6 @@ Style/Documentation:
 # Offense count: 3
 # Cop supports --auto-correct.
 Style/EmptyLines:
-  Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundBlockBody:
-  Enabled: false
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundClassBody:
-  Enabled: false
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/EmptyLinesAroundModuleBody:
   Enabled: false
 
 # Offense count: 1
@@ -87,7 +69,7 @@ Style/MethodCallParentheses:
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
 Style/PercentLiteralDelimiters:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 1
 # Configuration parameters: SupportedStyles.

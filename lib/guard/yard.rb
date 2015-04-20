@@ -1,11 +1,13 @@
-#require 'guard/compat/plugin'
-require 'guard'
-require 'guard/yard/version'
-require 'guard/yard/options'
+require 'guard/compat/plugin'
+require 'guard/yard_version'
+require 'yard'
 
 module Guard
   # Class [Guard::Yard]
   class Yard < Plugin
+    require 'guard/yard/options'
+    require 'guard/yard/yard_command'
+    require 'guard/yard/server'
 
     GEN_ALL_MSG = '[Guard::Yard] Generating all documentation'
     GEN_SUCCEED_MSG = '[Guard::Yard] Documentation has been generated'
@@ -14,6 +16,7 @@ module Guard
 
     # Your code goes here...
     autoload :Server, 'guard/yard/server'
+    autoload :Options, 'guard/yard/options'
     def initialize(options = {})
       super
       @options = Options.with_defaults(options)
@@ -33,7 +36,7 @@ module Guard
     # @raise [:task_has_failed] when stop has failed
     # @return [Object] the task result
     def stop
-      server.kill
+      @server.kill
     end
 
     # Called when `reload|r|z + enter` is pressed.
@@ -56,35 +59,13 @@ module Guard
       Guard::Compat::UI.info GEN_SUCCEED_MSG
     end
 
-    # Called on file(s) additions that the Guard plugin watches.
+    # Called on file(s) changes that the Guard plugin watches.
     #
     # @param [Array<String>] paths the changes files or paths
     # @raise [:task_has_failed] when run_on_additions has failed
     # @return [Object] the task result
     #
-    def run_on_additions(paths)
-      return false if paths.empty?
-      _throw_if_failed { run_for_paths(paths) }
-    end
-
-    # Called on file(s) modifications that the Guard plugin watches.
-    #
-    # @param [Array<String>] paths the changes files or paths
-    # @raise [:task_has_failed] when run_on_modifications has failed
-    # @return [Object] the task result
-    #
-    def run_on_modifications(paths)
-      return false if paths.empty?
-      _throw_if_failed { run_for_paths(paths) }
-    end
-
-    # Called on file(s) removals that the Guard plugin watches.
-    #
-    # @param [Array<String>] paths the changes files or paths
-    # @raise [:task_has_failed] when run_on_removals has failed
-    # @return [Object] the task result
-    #
-    def run_on_removals(paths)
+    def run_on_changes(paths)
       return false if paths.empty?
       _throw_if_failed { run_for_paths(paths) }
     end
@@ -98,9 +79,11 @@ module Guard
     # @return [Object] the task result
     #
     def run_for_paths(paths)
-      Guard::Compat::UI.info "[Guard::Yard] Detected changes in #{paths.join(',')}."
+      Guard::Compat::UI.
+        info "[Guard::Yard] Detected changes in #{paths.join(',')}."
       paths.each { |path| document([path]) }
-      Guard::Compat::UI.info "[Guard::Yard] Updated documentation for #{paths.join(',')}."
+      Guard::Compat::UI.
+        info "[Guard::Yard] Updated documentation for #{paths.join(',')}."
     end
 
     # Check.
@@ -110,7 +93,7 @@ module Guard
     #
     def check
       return true if File.exist?('.yardoc')
-      Guard::Compat::UI.info DOC_MISSING_MSG
+      Compat::UI.info DOC_MISSING_MSG
       run_all && true
     end
 
@@ -120,7 +103,7 @@ module Guard
     # @return [Object] the task result
     #
     def boot
-      check && server.kill && server.spawn && server.verify
+      check && @server.kill && @server.spawn && @server.verify
     end
 
     def document(files)
@@ -158,5 +141,4 @@ module Guard
       throw :task_has_failed unless yield
     end
   end
-
 end

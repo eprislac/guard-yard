@@ -7,19 +7,19 @@ begin
   task default: [:spec, :rubocop]
 
   namespace :test do
-    desc "Locally run tests like Travis and HoundCI would"
+    desc 'Locally run tests like Travis and HoundCI would'
     task :all_versions do
       system(*%w(bundle update --quiet)) || abort
 
-      gemfiles = Dir["gemfiles/Gemfile.rspec-*"]
+      gemfiles = Dir['gemfiles/Gemfile.rspec-*']
 
       actual_gemfiles = gemfiles.select { |f| /\d\.\d{1,2}$/ =~ f }
       actual_gemfiles.each do |gemfile|
         STDOUT.puts
-        STDOUT.puts "----------------------------------------------------- "
-        STDOUT.puts " >> Running tests using Gemfile: #{gemfile} <<"
-        STDOUT.puts "----------------------------------------------------- "
-        ENV["BUNDLE_GEMFILE"] = gemfile
+        STDOUT.puts '-----------------------------------------------'
+        STDOUT.puts " >> Running tests using Gemfile: #{gemfile} << "
+        STDOUT.puts '-----------------------------------------------'
+        ENV['BUNDLE_GEMFILE'] = gemfile
         system(*%w(bundle update --quiet)) || abort
         system(*%w(bundle exec rubocop -c .hound.yml)) || abort
         system(*%w(bundle exec rspec -c -fd)) || abort

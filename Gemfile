@@ -4,9 +4,8 @@ source 'https://rubygems.org'
 gemspec
 
 group :test do
-  gem "rspec", "~> 3.1"
+  gem 'rspec', '~> 3.1'
   gem 'rake'
-  gem "coveralls", require: false
 end
 
 group :development do
@@ -14,12 +13,15 @@ group :development do
 end
 
 group :development, :test do
-  gem "guard-compat", ">= 0.0.2", require: false
-  gem "rubocop", require: false
-  gem "guard-rubocop", require: false
+  gem 'guard', require: false
+  gem 'guard-compat', '>= 0.0.2', require: false
+  gem 'rubocop', require: false
+  gem 'guard-rubocop', require: false
   gem 'coveralls', require: false
+  gem 'guard-rspec', require: false
+  gem 'terminal-notifier'
 end
 
-group :tool do
-  gem "ruby_gntp", require: false
+group :doc do
+  gem 'yard'
 end
