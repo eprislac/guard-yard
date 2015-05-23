@@ -8,13 +8,14 @@ module Guard
     class YardCommand < String
       COMMAND_EXCEPTION = 'Invalid Command Exception'
       COMMAND_EMSG = 'is not a valid command.'
-      ENDING_MSG = 'Guard-YARD has been fired. Exiting...'
+      ENDING_MSG = '[Guard::Yard] has been fired. Exiting...'
 
       attr_accessor :path, :options, :parts
 
       def initialize(options = {})
         begin
-          _options = Guard::Yard::Options.with_defaults(options)
+          _options = Guard::Yard::Options
+                     .with_defaults(options)
           arg_error_check(_options)
           super(_parts(_options).join(' '))
         rescue ArgumentError => e

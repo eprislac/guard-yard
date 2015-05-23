@@ -20,6 +20,10 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'guard-rspec', require: false
   gem 'terminal-notifier'
+  gem 'terminal-notifier-guard'
+  gem 'rubycritic', require: false
+  gem 'guard-rubycritic'
+  gem 'ruby_gntp'
 end
 
 group :doc do

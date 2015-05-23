@@ -1,26 +1,24 @@
 require 'guard/compat/plugin'
-require 'guard/yard_version'
-require 'yard'
+require 'guard/yard/options'
+require 'guard/yard/yard_command'
+require 'guard/yard/server'
 
 module Guard
   # Class [Guard::Yard]
   class Yard < Plugin
-    require 'guard/yard/options'
-    require 'guard/yard/yard_command'
-    require 'guard/yard/server'
-
     GEN_ALL_MSG = '[Guard::Yard] Generating all documentation'
     GEN_SUCCEED_MSG = '[Guard::Yard] Documentation has been generated'
     DOC_MISSING_MSG = '[Guard::Yard] Documentation missing.'
     attr_accessor :options, :server
 
     # Your code goes here...
-    autoload :Server, 'guard/yard/server'
-    autoload :Options, 'guard/yard/options'
+
     def initialize(options = {})
       super
+      Guard::Compat::UI.info '[Guard::Yard] has started'
+
       @options = Options.with_defaults(options)
-      @server = Server.new(options)
+      @server = Server.new(@options)
     end
 
     # Called once when Guard starts.
@@ -28,7 +26,9 @@ module Guard
     # @raise [:task_has_failed] when start has failed
     # @return [Object] the task result
     def start
-      boot
+      run_all
+      Guard::Compat::UI.info '[Guard::Yard] has started'
+      #boot
     end
 
     # Called on pressing `stop|quit|exit|s|q|e + enter` (Guard quits).
@@ -55,7 +55,7 @@ module Guard
     #
     def run_all
       Guard::Compat::UI.info GEN_ALL_MSG
-      system(YardCommand.new(options))
+      system YardCommand.new(@options)
       Guard::Compat::UI.info GEN_SUCCEED_MSG
     end
 
@@ -103,7 +103,11 @@ module Guard
     # @return [Object] the task result
     #
     def boot
-      check && @server.kill && @server.spawn && @server.verify
+      check && @server
+               .kill && @server
+                        .spawn && @server
+                                  .verify
+      Guard::Compat::UI.info 'Guard::Yard is Running'
     end
 
     def document(files)

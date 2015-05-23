@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "rubycritic/cli/application"
+
+exit Rubycritic::Cli::Application.new(ARGV).execute

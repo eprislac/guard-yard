@@ -1,4 +1,4 @@
-guard 'yard', options: { cmd: 'yard doc' } do
+guard :yard, :options => { cmd: 'server' } do
   watch(%r{ /app\/.+\.rb/ })
   watch(%r{ /lib\/.+\.rb/ })
   watch(%r{ /ext\/.+\.c/ })
