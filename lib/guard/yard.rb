@@ -12,13 +12,12 @@ module Guard
     attr_accessor :options, :server
 
     # Your code goes here...
-
+    autoload :Server, 'guard/yard/server'
+    autoload :Options, 'guard/yard/options'
     def initialize(options = {})
       super
-      Guard::Compat::UI.info '[Guard::Yard] has started'
-
       @options = Options.with_defaults(options)
-      @server = Server.new(@options)
+      @server = Server.new(options)
     end
 
     # Called once when Guard starts.
@@ -26,9 +25,7 @@ module Guard
     # @raise [:task_has_failed] when start has failed
     # @return [Object] the task result
     def start
-      run_all
-      Guard::Compat::UI.info '[Guard::Yard] has started'
-      #boot
+      boot
     end
 
     # Called on pressing `stop|quit|exit|s|q|e + enter` (Guard quits).
@@ -36,7 +33,7 @@ module Guard
     # @raise [:task_has_failed] when stop has failed
     # @return [Object] the task result
     def stop
-      @server.kill
+      server.kill
     end
 
     # Called when `reload|r|z + enter` is pressed.
@@ -54,9 +51,7 @@ module Guard
     # @return [Object] the task result
     #
     def run_all
-      Guard::Compat::UI.info GEN_ALL_MSG
-      system YardCommand.new(@options)
-      Guard::Compat::UI.info GEN_SUCCEED_MSG
+      boot
     end
 
     # Called on file(s) changes that the Guard plugin watches.
@@ -103,10 +98,10 @@ module Guard
     # @return [Object] the task result
     #
     def boot
-      check && @server
-               .kill && @server
-                        .spawn && @server
-                                  .verify
+      server
+       .kill && server
+                .spawn && server
+                          .verify
       Guard::Compat::UI.info 'Guard::Yard is Running'
     end
 

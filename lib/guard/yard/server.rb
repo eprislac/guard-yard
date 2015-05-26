@@ -45,7 +45,7 @@ module Guard
             notify_success
           rescue Errno::ECONNREFUSED
             next
-          rescue Compat::UI.error(SERVER_START_ERROR)
+          rescue Guard::Compat::UI.error(SERVER_START_ERROR)
             notify_fail
           end
         end
